@@ -4,16 +4,16 @@
    =========================================================== */
 
 :root {
-  --navy:      #0d2440;
-  --navy-deep: #081a30;
-  --blue:      #1f6feb;
-  --blue-soft: #4f8cf0;
-  --accent:    #21c1a6;
-  --ink:       #1a2433;
-  --muted:     #5a6678;
-  --line:      #e3e8ef;
+  --navy:      #0c2e3b;   /* deep teal — hero / footer base */
+  --navy-deep: #06212c;
+  --blue:      #1786a8;   /* accessible action/link color   */
+  --blue-soft: #35c0ed;   /* brand cyan (logo) — hovers/glow */
+  --accent:    #35c0ed;   /* brand cyan accent              */
+  --ink:       #133240;
+  --muted:     #51606a;
+  --line:      #e1e8ec;
   --bg:        #ffffff;
-  --bg-alt:    #f5f8fc;
+  --bg-alt:    #f3f8fb;
   --radius:    14px;
   --shadow:    0 10px 30px rgba(13, 36, 64, 0.08);
   --maxw:      1080px;
@@ -51,10 +51,13 @@ h1, h2, h3 { line-height: 1.2; color: var(--navy); letter-spacing: -0.01em; }
 }
 .brand { display: flex; align-items: center; gap: 12px; }
 .brand .logo {
-  width: 38px; height: 38px; flex: none;
+  width: auto; height: 40px; flex: none; display: block;
 }
-.brand .name { font-weight: 700; color: var(--navy); font-size: 1.12rem; letter-spacing: -0.02em; }
-.brand .name span { color: var(--blue); }
+.brand .name {
+  font-family: Georgia, "Times New Roman", "Cambria", serif;
+  font-weight: 600; color: var(--ink); font-size: 1.18rem;
+  letter-spacing: 0.04em; text-transform: uppercase; line-height: 1;
+}
 .nav-links { display: flex; align-items: center; gap: 28px; list-style: none; }
 .nav-links a { color: var(--ink); font-weight: 500; font-size: 0.96rem; }
 .nav-links a:hover { color: var(--blue); text-decoration: none; }
@@ -69,7 +72,7 @@ h1, h2, h3 { line-height: 1.2; color: var(--navy); letter-spacing: -0.01em; }
 /* ---------- Hero ---------- */
 .hero {
   background:
-    radial-gradient(1100px 500px at 80% -10%, rgba(33,193,166,0.16), transparent 60%),
+    radial-gradient(1100px 500px at 80% -10%, rgba(53,192,237,0.20), transparent 60%),
     linear-gradient(160deg, var(--navy) 0%, var(--navy-deep) 100%);
   color: #eaf1fb;
   padding: 96px 0 104px;
@@ -93,6 +96,11 @@ h1, h2, h3 { line-height: 1.2; color: var(--navy); letter-spacing: -0.01em; }
 .btn-ghost:hover { border-color: #fff; text-decoration: none; }
 
 /* ---------- Sections ---------- */
+.eyebrow {
+  display: inline-block; color: var(--blue); font-weight: 600;
+  letter-spacing: 0.08em; text-transform: uppercase; font-size: 0.8rem;
+}
+.btn-block { width: 100%; }
 section { padding: 84px 0; }
 .section-alt { background: var(--bg-alt); }
 .section-head { max-width: 640px; margin: 0 auto 52px; text-align: center; }
